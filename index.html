@@ -38,13 +38,27 @@
                 <div id="card_${i}" class="${cardClass}">
                     <div class="card-body">
                         <h4> ${label}</h4>
-                        <div id="${unitAbrev}"></div>
+                        <div id="${unitAbrev}Output"></div>
                     </div>
                </div>
-            `)
+            `);
            }
+           
+           document.getElementById("lbsInput").addEventListener(
+                    "input",
+                    function(e){
+                        let lbs = e.target.value;
+                        document.getElementById("gmOutput").innerHTML=lbs/0.0022
+                        document.getElementById("kgOutput").innerHTML=lbs/2.2046
+                        document.getElementById("ozOutput").innerHTML=lbs*16
+                    }
+
+
+           );
          }
-    
+         
+
+
     </script> 
         
        
@@ -58,9 +72,9 @@
                
                 <form>
                     <div class="form-group mb_2">
-                        <input type="number" name="lbsinput" id="lbsinput" placeholder="inter your weight in lbs...." class="form-control form-control-lg">
+                        <input type="number" name="lbsinput" id="lbsInput" placeholder="inter your weight in lbs...." class="form-control form-control-lg">
                     </div>
-                </form> <br>
+                </form>
                 
                
               
