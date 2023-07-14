@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bootstrap with javascript</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script>type="text/javascript" 
+         function renderDiv(){
+            for(i=1;i<4;i++){
+                cardClass="card mb-2 ";
+                label=""
+                switch(i){
+                    case 1: 
+                      cardClass+="bg-primary";
+                      label="Grams:"
+                      unitAbrev="gm"
+                      break;
+                    case 2: 
+                      cardClass+="bg-success";
+                      label="Kilogram:"
+                      unitAbrev="kg"
+                      break;
+                    case 3: 
+                      cardClass+="bg-danger";
+                      label="Ounces:"
+                      unitAbrev="oz"
+                      break;
+                      default:
+                         cardClass="";
+                }
+
+                
+
+
+            document.write(`
+                <div id="card_${i}" class="${cardClass}">
+                    <div class="card-body">
+                        <h4> ${label}</h4>
+                        <div id="${unitAbrev}"></div>
+                    </div>
+               </div>
+            `)
+           }
+         }
+    
+    </script> 
+        
+       
+</head>
+<body>
+    <div class="container">
+         <div class="row">
+            <div class=" col-md-6 offset-md-3">
+                
+                <h1 class="display-4 text-center">Weight Computing</h1>
+               
+                <form>
+                    <div class="form-group mb_2">
+                        <input type="number" name="lbsinput" id="lbsinput" placeholder="inter your weight in lbs...." class="form-control form-control-lg">
+                    </div>
+                </form> <br>
+                
+               
+              
+               
+               
+               
+               
+               
+               
+               
+               
+                <div id="result">
+                    <script>
+                        renderDiv();
+                    </script>
+                </div>
+            </div>
+         </div>
+    </div>
+    
+</body>
+</html>
